@@ -11,7 +11,7 @@ yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce
 echo "set yum source"
 
 
-output='yum –y install docker-ce-18.06.2.ce'
+yum –y install docker-ce-18.06.2.ce
 
 systemctl start docker
 systemctl enable docker
