@@ -1,5 +1,6 @@
 #! /bin/bash
 # Docker setup
+
 yum -y install curl
 curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.myhuaweicloud.com/repo/CentOS-Base-7.repo
 yum makecache
@@ -18,6 +19,5 @@ systemctl enable docker
 systemctl status docker | grep "active"
 
 curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2.m.daocloud.io
-echo "Set Docker source successful"
 
-echo "Congratulations, this host has successfully deployed docker."
+echo "> Congratulations, this host has successfully deployed docker <."
