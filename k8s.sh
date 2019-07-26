@@ -1,6 +1,6 @@
 #! /bin/bash
-yum -y install wget
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+yum -y install curl
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.myhuaweicloud.com/repo/CentOS-Base-7.repo
 yum makecache
 
 systemctl stop firewalld
