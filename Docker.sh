@@ -10,6 +10,11 @@ echo "you will see the yum-utils, grep device-mapper-persistent-data and lvm2 in
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 echo "set yum source"
 
+# set yum
+sed -i 's|plugins=1|plugins=0|' /etc/yum.conf
+sed -i 's|enabled=1|enabled=0|' /etc/yum/pluginconf.d/fastestmirror.conf
+yum clean dbcache
+
 yum –y install docker-ce-18.06.2.ce
 systemctl start docker
 systemctl enable docker
