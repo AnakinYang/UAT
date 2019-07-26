@@ -20,7 +20,7 @@ echo "set yum source"
 curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2.m.daocloud.io
 echo "Set Docker source successful"
 
-yum –y install docker-ce-18.06.2.ce
+output=yum –y install docker-ce-18.06.2.ce
 
 systemctl start docker
 systemctl enable docker
