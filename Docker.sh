@@ -1,5 +1,8 @@
 #! /bin/bash
 # Docker setup
+yum -y install curl
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.myhuaweicloud.com/repo/CentOS-Base-7.repo
+yum makecache
 
 yum install -y yum-utils device-mapper-persistent-data lvm2
 rpm -qa | grep yum-utils
