@@ -6,9 +6,6 @@ curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.myhuaweicloud.com/repo/
 yum makecache
 
 yum -y install yum-utils device-mapper-persistent-data lvm2
-rpm -qa | grep yum-utils
-rpm -qa | grep device-mapper-persistent-data
-rpm -qa | grep lvm2
 
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
