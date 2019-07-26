@@ -17,15 +17,15 @@ echo "set yum source"
 
 
 
+curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2.m.daocloud.io
+echo "Set Docker source successful"
 
 yum –y install docker-ce-18.06.2.ce
-sleep 20
+
 systemctl start docker
 systemctl enable docker
 systemctl status docker | grep "active"
 echo "The active means docker install complete"
 
-curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2.m.daocloud.io
-echo "Set Docker source successful"
 
 echo "Congratulations, this host has successfully deployed docker."
