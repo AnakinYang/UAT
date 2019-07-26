@@ -11,8 +11,8 @@ yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce
 echo "set yum source"
 
 # set yum
-# sed -i 's|plugins=1|plugins=0|' /etc/yum.conf
-# sed -i 's|enabled=1|enabled=0|' /etc/yum/pluginconf.d/fastestmirror.conf
+sed -i 's|plugins=1|plugins=0|' /etc/yum.conf
+sed -i 's|enabled=1|enabled=0|' /etc/yum/pluginconf.d/fastestmirror.conf
 # yum clean dbcache
 
 
