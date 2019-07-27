@@ -2,8 +2,8 @@
 # Docker setup
 
 #--set HuaweiCloud repo--#
-#curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.myhuaweicloud.com/repo/CentOS-Base-7.repo
-#yum makecache
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.myhuaweicloud.com/repo/CentOS-Base-7.repo
+yum makecache
 
 yum -y install yum-utils device-mapper-persistent-data lvm2
 
