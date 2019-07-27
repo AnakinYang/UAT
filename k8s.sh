@@ -1,7 +1,4 @@
 #! /bin/bash
-yum -y install curl
-curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.myhuaweicloud.com/repo/CentOS-Base-7.repo
-yum makecache
 
 systemctl stop firewalld
 systemctl disable firewalld
@@ -36,12 +33,10 @@ echo '*/30 * * * * /usr/sbin/ntpdate time7.aliyun.com >/dev/null 2>&1' > /tmp/cr
 crontab /tmp/crontab2.tmp
 systemctl start ntpdate.service
 
-yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-# yum –y install docker-ce-18.06.2.ce
-curl -fsSL get.docker.com -o get-docker.sh
-sudo sh get-docker.sh --mirror Aliyun
-
-curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2.m.daocloud.io
+#--setup Docker--#
+#yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+#yum –y install docker-ce-18.06.2.ce
+#curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2.m.daocloud.io
 
 systemctl daemon-reload
 systemctl restart docker
