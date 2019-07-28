@@ -51,11 +51,17 @@ images=(
     pause:3.1
     etcd:3.3.10
     coredns:1.3.1
+    flannel:v0.11.0-amd64
 )
-
+a=0
 for imageName in ${images[@]} ; do
-    docker pull oceancloud/$imageName
-    docker tag oceancloud/$imageName k8s.gcr.io/$imageName
+docker pull oceancloud/$imageName
+let a++
+if [ "$a" -ne 8 ] ; then
+   docker tag oceancloud/$imageName k8s.gcr.io/$imageName
+else
+   docker tag oceancloud/$imageName quay.io/coreos/$imageName
+fi
 done
 
 yum install -y kubelet-1.14.1-0.x86_64
