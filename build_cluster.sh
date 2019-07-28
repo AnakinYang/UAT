@@ -14,8 +14,14 @@ tail -n 3 /etc/hosts
 
 echo "hostname and hostmap Set Successful"
 echo "Start pull k8s.abt, Please enter <password> after <yes>"
-
 cd ;scp root@192.168.137.151:/root/k8s.abt .
+
+#-- open forward--#
+echo "1" > /proc/sys/net/ipv4/ip_forward
+#-- open forward when reboot--#
+echo "echo 1 > /proc/sys/net/ipv4/ip_forward" >> /etc/rc.d/rc.local
+
+
 tail -n 2 k8s.abt | sh
 
 # cp /etc/kubernetes/kubelet.conf $HOME/
