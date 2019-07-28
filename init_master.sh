@@ -24,7 +24,7 @@ echo "source <(kubectl completion bash)" >> ~/.bashrc
 kubeadm config images list
 
 # kubeadm init --pod-network-cidr=10.244.0.0/16
-kubeadm init --pod-network-cidr=10.244.0.0/16 | tee k8s.abt
+kubeadm init --pod-network-cidr=10.244.0.0/16 | tee $HOME/k8s.abt
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
