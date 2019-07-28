@@ -16,7 +16,7 @@ echo "hostname and hostmap Set Successful"
 echo "Start pull k8s.abt, Please enter <password> after <yes>"
 
 cd ;scp root@192.168.137.151:/root/k8s.abt .
-tail -n 1 k8s.abt | sh
+tail -n 2 k8s.abt | sh
 
 cp /etc/kubernetes/kubelet.conf $HOME/
 chown $(id -u):$(id -g) $HOME/kubelet.conf
