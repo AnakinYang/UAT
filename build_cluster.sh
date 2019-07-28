@@ -21,7 +21,6 @@ echo "1" > /proc/sys/net/ipv4/ip_forward
 #-- open forward when reboot--#
 echo "echo 1 > /proc/sys/net/ipv4/ip_forward" >> /etc/rc.d/rc.local
 
-
 tail -n 2 k8s.abt | sh
 
 # cp /etc/kubernetes/kubelet.conf $HOME/
