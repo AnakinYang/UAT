@@ -11,8 +11,12 @@ echo -e "192.168.137.151 k8s-master\n192.168.137.152 k8s-node1\n192.168.137.153 
 
 hostname
 tail -n 3 /etc/hosts
-
 echo "hostname and hostmap Set Successful"
+
+#-- Set For Kibana --#
+docker pull oceancloud/kibana-oss:v6.6.1
+docker tag oceancloud/kibana-oss:v6.6.1 docker.elastic.co/kibana/kibana-oss:6.6.1
+
 echo "Start pull k8s.abt, Please enter <password> after <yes>"
 cd ;scp root@192.168.137.151:/root/k8s.abt .
 
