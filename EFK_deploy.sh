@@ -20,5 +20,5 @@ sleep 20
 
 kubectl get po -n kube-system
 
-echo -e "\e[36;1mElesticsearch:\t$(grep `hostname` /etc/hosts |awk '{print $1}'):$(kubectl get svc -n kube-system | grep "elastic" | grep -Eo "[1-9]{5}")\e[0m"
-echo -e "\e[36;1mKibana:\t\t$(grep `hostname` /etc/hosts |awk '{print $1}'):$(kubectl get svc -n kube-system | grep "kibana" | grep -Eo "[1-9]{5}")\e[0m"
+echo -e "\e[36;1mElesticsearch:\t$(grep `hostname` /etc/hosts |awk '{print $1}'):$(kubectl get svc -n kube-system | grep "elastic" | grep -Eo "[0-9]{5}")\e[0m"
+echo -e "\e[36;1mKibana:\t\t$(grep `hostname` /etc/hosts |awk '{print $1}'):$(kubectl get svc -n kube-system | grep "kibana" | grep -Eo "[0-9]{5}")\e[0m"
