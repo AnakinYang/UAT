@@ -52,12 +52,13 @@ images=(
     etcd:3.3.10
     coredns:1.3.1
     flannel:v0.11.0-amd64
+    tiller:v2.11.0
 )
 a=0
 for imageName in ${images[@]} ; do
 docker pull oceancloud/$imageName
 let a++
-if [ "$a" -ne 8 ] ; then
+if [ "$a" -ne 9 ] ; then
    docker tag oceancloud/$imageName k8s.gcr.io/$imageName
 else
    docker tag oceancloud/$imageName quay.io/coreos/$imageName
