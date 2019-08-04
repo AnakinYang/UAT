@@ -1,3 +1,5 @@
+#! /bin/bash
+
 cd /root/UAT/;kubectl apply -f kubernetes-dashboard.yaml
 kubectl apply -f kube-dashboard-access.yaml
 
